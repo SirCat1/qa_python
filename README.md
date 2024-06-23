@@ -1,12 +1,42 @@
-# qa_python
-tests.py::TestBooksCollector::test_add_new_book_add_two_books PASSED                                                                                                                                                             [  9%] 
-tests.py::TestBooksCollector::test_add_new_book_duplicate PASSED                                                                                                                                                                 [ 18%] 
-tests.py::TestBooksCollector::test_set_book_genre PASSED                                                                                                                                                                         [ 27%] 
-tests.py::TestBooksCollector::test_set_book_genre_invalid PASSED                                                                                                                                                                 [ 36%] 
-tests.py::TestBooksCollector::test_get_books_with_specific_genre PASSED                                                                                                                                                          [ 45%] 
-tests.py::TestBooksCollector::test_get_books_for_children PASSED                                                                                                                                                                 [ 54%] 
-tests.py::TestBooksCollector::test_add_book_in_favorites PASSED                                                                                                                                                                  [ 63%] 
-tests.py::TestBooksCollector::test_add_book_in_favorites_nonexistent PASSED                                                                                                                                                      [ 72%] 
-tests.py::TestBooksCollector::test_delete_book_from_favorites PASSED                                                                                                                                                             [ 81%] 
-tests.py::TestBooksCollector::test_delete_book_from_favorites_nonexistent PASSED                                                                                                                                                 [ 90%] 
-tests.py::TestBooksCollector::test_get_list_of_favorites_books PASSED                                                                                                                                                            [100%] 
+test_add_new_book_add_two_books:
+Проверяет добавление двух новых книг в коллекцию.
+
+test_add_new_book_duplicate:
+Проверяет, что одна и та же книга не может быть добавлена в коллекцию дважды.
+
+
+test_set_book_genre:
+Проверяет установку жанра для книги.
+Добавляет книгу и устанавливает для нее жанр, затем проверяет, что жанр установлен корректно.
+
+test_set_book_genre_invalid:
+Проверяет попытку установки неправильного жанра для книги.
+Добавляет книгу и пытается установить жанр, которого нет в списке допустимых жанров, затем проверяет, что жанр не изменился.
+
+test_get_books_with_specific_genre:
+Проверяет получение списка книг с определенным жанром.
+Добавляет две книги с одинаковым жанром и проверяет, что они возвращаются при запросе книг с этим жанром.
+
+test_get_books_for_children:
+Проверяет получение списка книг, подходящих для детей (без возрастного ограничения).
+Добавляет книги с жанрами, которые имеют возрастное ограничение и без него, затем проверяет, что возвращается только книга без возрастного ограничения.
+
+test_add_book_in_favorites:
+Проверяет добавление книги в список избранных.
+Добавляет книгу и добавляет ее в избранное, затем проверяет, что книга находится в списке избранных.
+
+test_add_book_in_favorites_nonexistent:
+Проверяет попытку добавления несуществующей книги в список избранных.
+Пытается добавить в избранное книгу, которая не была добавлена в коллекцию, затем проверяет, что список избранных пуст.
+
+test_delete_book_from_favorites:
+Проверяет удаление книги из списка избранных.
+Добавляет книгу, добавляет ее в избранное, затем удаляет из избранного и проверяет, что список избранных пуст.
+
+test_delete_book_from_favorites_nonexistent:
+Проверяет попытку удаления несуществующей книги из списка избранных.
+Пытается удалить из избранного книгу, которая не была добавлена в избранное, и проверяет, что список избранных пуст.
+
+test_get_list_of_favorites_books:
+Проверяет получение списка избранных книг.
+Добавляет две книги, добавляет их в избранное, затем проверяет, что обе книги находятся в списке избранных.
